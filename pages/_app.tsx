@@ -1,15 +1,20 @@
-import "@/styles/globals.css";
-
+import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { PlasmicRootProvider } from "@plasmicapp/loader-nextjs";
-import { PLASMIC } from "@/plasmic-init";
+import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
 
-export default function App({ Component, pageProps }: AppProps) {
-  const plasmicData = (pageProps as any).plasmicData;
+const SIDEBAR_WIDTH = 240;
 
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <PlasmicRootProvider loader={PLASMIC} prefetchedData={plasmicData}>
-      <Component {...pageProps} />
-    </PlasmicRootProvider>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <div className="flex flex-row flex-1">
+        <Sidebar width={SIDEBAR_WIDTH} />
+        <main className="flex-1 p-6 bg-[#F8F8FA]">
+          <Component {...pageProps} />
+        </main>
+      </div>
+    </div>
   );
 }
