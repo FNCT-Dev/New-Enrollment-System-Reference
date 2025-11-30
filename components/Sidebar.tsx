@@ -29,7 +29,7 @@ export default function Sidebar({ width = 240 }: SidebarProps) {
         </Link>
 
         <Link
-          href="/"
+          href="/register"
           className="p-4 flex items-center gap-3 hover:bg-[#2A2A40] transition"
         >
           <FiCalendar size={22} />
