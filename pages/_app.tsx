@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 
-const SIDEBAR_WIDTH = 240;
+const SIDEBAR_WIDTH = 280;
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (

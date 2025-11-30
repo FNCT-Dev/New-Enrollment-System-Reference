@@ -26,6 +26,7 @@ export default function Header({
           width={144}
           height={48}
           priority
+          className="ml-12"
         />
         <h1 className="text-2xl font-bold"></h1>
       </div>

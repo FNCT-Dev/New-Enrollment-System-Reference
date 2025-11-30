@@ -6,8 +6,8 @@ import {
   FiSearch,
   FiArchive,
   FiBook,
-  FiLogOut,
 } from "react-icons/fi";
+import LogoutButton from "./Logout";
 
 interface SidebarProps {
   width?: number;
@@ -71,13 +71,7 @@ export default function Sidebar({ width = 240 }: SidebarProps) {
         </Link>
       </div>
       <div className="flex flex-col">
-        <button
-          className="p-4 flex items-center gap-3 hover:bg-[#3A1E1E] transition text-red-300"
-          onClick={() => console.log("Click Log Out")}
-        >
-          <FiLogOut size={22} />
-          <span className="text-md font-medium">Log Out</span>
-        </button>
+        <LogoutButton />
       </div>
     </aside>
   );
