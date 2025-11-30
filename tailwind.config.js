@@ -1,9 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [],
+const config = {
+  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        figtree: ["Figtree", "sans-serif"],
+      },
+    },
   },
   plugins: [],
-}
+};
 
+module.exports = config;

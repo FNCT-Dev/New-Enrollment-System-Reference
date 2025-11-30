@@ -1,13 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import Card from "./Card";
 
-export default function BasicSearch({
-  onSearch,
-}: {
-  onSearch: (params: any) => void;
-}) {
-  const [params, setParams] = useState({
+interface BasicSearchParams {
+  subject: string;
+  courseNumber: string;
+  keywords: string;
+  coreAttributes: string;
+  openOnly: boolean;
+}
+
+interface BasicSearchProps {
+  onSearch?: (params: BasicSearchParams) => void;
+}
+
+export default function BasicSearch({ onSearch }: BasicSearchProps) {
+  const [params, setParams] = useState<BasicSearchParams>({
     subject: "",
     courseNumber: "",
     keywords: "",
@@ -23,48 +32,47 @@ export default function BasicSearch({
     }));
   };
 
-  const handleSearch = () => onSearch(params);
+  const handleSearch = () => onSearch?.(params);
 
   return (
-    <div className="my-4 p-4 border rounded">
-      <div className="grid grid-cols-2 gap-4">
+    <Card title="Basic Search" className="w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <input
-          name="Subject"
+          name="subject"
           placeholder="Subject"
-          className="border p-2 rounded"
+          className="border p-2 rounded w-full"
           onChange={handleChange}
         />
         <input
           name="courseNumber"
           placeholder="Course Number"
-          className="border p-2 rounded"
+          className="border p-2 rounded w-full"
           onChange={handleChange}
         />
         <input
           name="keywords"
           placeholder="Keywords"
-          className="border p-2 rounded"
+          className="border p-2 rounded w-full"
           onChange={handleChange}
         />
         <input
           name="coreAttributes"
           placeholder="Attributes - Mason Core"
-          className="border p-2 rounded"
+          className="border p-2 rounded w-full"
           onChange={handleChange}
         />
-
-        <label className="col-span-2 flex items-center gap-2">
+        <label className="col-span-1 md:col-span-2 flex items-center gap-2">
           <input type="checkbox" name="openOnly" onChange={handleChange} />
           Open Section Only
         </label>
       </div>
 
       <button
-        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded"
+        className="mt-4 w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
         onClick={handleSearch}
       >
         Search
       </button>
-    </div>
+    </Card>
   );
 }
