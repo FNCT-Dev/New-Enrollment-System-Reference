@@ -1,5 +1,13 @@
 import Link from "next/link";
-import { FiHome, FiUser, FiLogOut } from "react-icons/fi";
+import {
+  FiFolder,
+  FiCalendar,
+  FiBookmark,
+  FiSearch,
+  FiArchive,
+  FiBook,
+  FiLogOut,
+} from "react-icons/fi";
 
 interface SidebarProps {
   width?: number;
@@ -16,25 +24,59 @@ export default function Sidebar({ width = 240 }: SidebarProps) {
           href="/"
           className="p-4 flex items-center gap-3 hover:bg-[#2A2A40] transition"
         >
-          <FiHome size={22} />
-          <span className="text-md font-medium">홈</span>
+          <FiFolder size={22} />
+          <span className="text-md font-medium">Prepare for Registration</span>
         </Link>
 
         <Link
-          href="/profile"
+          href="/"
           className="p-4 flex items-center gap-3 hover:bg-[#2A2A40] transition"
         >
-          <FiUser size={22} />
-          <span className="text-md font-medium">내 정보</span>
+          <FiCalendar size={22} />
+          <span className="text-md font-medium">Register for Classes</span>
+        </Link>
+
+        <Link
+          href="/"
+          className="p-4 flex items-center gap-3 hover:bg-[#2A2A40] transition"
+        >
+          <FiBookmark size={22} />
+          <span className="text-md font-medium">Plan Ahead</span>
+        </Link>
+
+        <Link
+          href="/"
+          className="p-4 flex items-center gap-3 hover:bg-[#2A2A40] transition"
+        >
+          <FiSearch size={22} />
+          <span className="text-md font-medium">Browse Classes</span>
+        </Link>
+
+        <Link
+          href="/"
+          className="p-4 flex items-center gap-3 hover:bg-[#2A2A40] transition"
+        >
+          <FiArchive size={22} />
+          <span className="text-md font-medium">
+            View Registration Information
+          </span>
+        </Link>
+
+        <Link
+          href="/"
+          className="p-4 flex items-center gap-3 hover:bg-[#2A2A40] transition"
+        >
+          <FiBook size={22} />
+          <span className="text-md font-medium">Browse Course Catalog</span>
         </Link>
       </div>
       <div className="flex flex-col">
         <button
           className="p-4 flex items-center gap-3 hover:bg-[#3A1E1E] transition text-red-300"
-          onClick={() => console.log("로그아웃 클릭")}
+          onClick={() => console.log("Click Log Out")}
         >
           <FiLogOut size={22} />
-          <span className="text-md font-medium">로그아웃</span>
+          <span className="text-md font-medium">Log Out</span>
         </button>
       </div>
     </aside>
