@@ -4,7 +4,7 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        figtree: ["Figtree", "sans-serif"],
+        sans: ["'Open Sans'", "sans-serif"],
       },
     },
   },

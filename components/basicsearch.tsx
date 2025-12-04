@@ -68,7 +68,7 @@ export default function BasicSearch({ onSearch }: BasicSearchProps) {
       </div>
 
       <button
-        className="mt-4 w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        className="mt-4 w-full py-3 bg-[#005239] text-white rounded-lg hover:bg-[#1B815F] transition"
         onClick={handleSearch}
       >
         Search

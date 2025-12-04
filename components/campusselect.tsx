@@ -8,13 +8,7 @@ interface CampusSelectProps {
 }
 
 export default function CampusSelect({ onNext }: CampusSelectProps) {
-  const campuses = [
-    "Fairfax",
-    "Mason Square",
-    "SciTech",
-    "Arlington",
-    "Mason Korea",
-  ];
+  const campuses = ["Fairfax", "Mason Square", "SciTech", "Mason Korea"];
   const [selected, setSelected] = useState<string[]>([]);
 
   const toggleCampus = (campus: string) => {
@@ -26,7 +20,7 @@ export default function CampusSelect({ onNext }: CampusSelectProps) {
   };
 
   return (
-    <Card title="Select Campus(es)">
+    <Card title="Select Campus">
       <div className="flex flex-wrap gap-4 mb-4">
         {campuses.map((campus) => (
           <label
@@ -45,7 +39,7 @@ export default function CampusSelect({ onNext }: CampusSelectProps) {
         ))}
       </div>
       <button
-        className="w-full py-3 bg-green-500 text-white rounded-lg disabled:opacity-50 hover:bg-green-600 transition"
+        className="w-full py-3 bg-[#005239] text-white rounded-lg disabled:opacity-50 hover:bg-[#1B815F] transition"
         disabled={selected.length === 0}
         onClick={() => onNext(selected)}
       >

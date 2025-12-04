@@ -14,7 +14,7 @@ export default function SemesterSelect({ onNext }: SemesterSelectProps) {
   return (
     <Card title="Select Semester">
       <select
-        className="w-full p-3 border rounded-lg mb-6 focus:outline-none focus:ring-2 focus:ring-green-400"
+        className="w-full p-3 border rounded-lg mb-6 focus:outline-none focus:ring-2 focus:ring-[#FFC733]"
         value={selected}
         onChange={(e) => setSelected(e.target.value)}
       >
@@ -29,7 +29,7 @@ export default function SemesterSelect({ onNext }: SemesterSelectProps) {
       </select>
 
       <button
-        className="w-full py-3 bg-green-500 text-white rounded-lg disabled:opacity-50 hover:bg-green-600 transition"
+        className="w-full py-3 bg-[#005239] text-[#F5F5F5] rounded-lg disabled:opacity-50 hover:bg-[#1B815F] transition"
         disabled={!selected}
         onClick={() => onNext(selected)}
       >
